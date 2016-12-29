@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+.newsList {
+  min-width: 350px;
+  max-width: 1200px;
+  padding: 50px;
+  margin: 50px auto;
+  background: $white;
+  color: $gray-dark;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
