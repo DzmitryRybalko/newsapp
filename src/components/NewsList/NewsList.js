@@ -11,6 +11,7 @@ class NewsList extends React.Component {
   static propTypes = {
     newsList: React.PropTypes.array.isRequired,
     getNews: React.PropTypes.func.isRequired,
+    filter: React.PropTypes.string.isRequired,
   }
 
   componentWillMount() {
@@ -18,14 +19,17 @@ class NewsList extends React.Component {
   }
 
   render() {
-    const renderedNews = this.props.newsList.map(news =>
-      <News
-        title={news.title}
-        description={news.title}
-        key={news.title}
-        url={news.url}
-        urlToImage={news.urlToImage}
-        />,
+    const renderedNews = this.props.newsList
+      .filter(news => news.title.toLowerCase().includes(this.props.filter)
+        || (news.description && news.description.toLowerCase().includes(this.props.filter)))
+      .map(news =>
+        <News
+          title={news.title}
+          description={news.title}
+          key={news.title}
+          url={news.url}
+          urlToImage={news.urlToImage}
+          />,
     );
 
     return (
@@ -39,6 +43,7 @@ class NewsList extends React.Component {
 function mapStateToProps(state) {
   return {
     newsList: state.news.NewsList,
+    filter: state.news.filter,
   };
 }
 

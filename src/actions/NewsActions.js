@@ -31,3 +31,8 @@ export const getNews = () => {
     promise,
   };
 };
+
+export const setFilter = (filter) => ({
+  type: types.SET_FILTER,
+  filter,
+});

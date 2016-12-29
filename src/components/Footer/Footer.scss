@@ -12,11 +12,17 @@
     a {
       color: $gray-light;
     }
-  }
-}
 
-@media  (max-width: 600px) {
-  .footer {
-    position: relative;
+    float: left;
+  }
+
+  .search {
+    display: table;
+    margin: 0 auto;
+
+    input {
+      height: 30px;
+      padding: 5px;
+    }
   }
 }
