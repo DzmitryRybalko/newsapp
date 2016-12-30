@@ -46,7 +46,7 @@ class Footer extends React.Component {
       <div className="footer">
         <div className="container">
           <div className="reloads">
-            You load this page {this.state.reloadTimes} times.
+            You load this page {this.state.reloadTimes} time(s).
           </div>
 
           <div className="mail">
