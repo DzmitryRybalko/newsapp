@@ -21,7 +21,7 @@ $ npm install
 $ npm start
 ```
 
-If everything works, you can see application at localhost:8080 in your browser
+If everything works, you can see application at 8080 port in your [browser](http://localhost:8080/)
 
 ## Application Structure
 ```
