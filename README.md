@@ -7,13 +7,21 @@ This README would normally document whatever steps are necessary to get your app
 
 ## Getting Started
 
-1. First, clone the project `git clone https://bitbucket.org/MessierM1/newsapp.git`
+First, clone the project:
 
-2. Then install dependencies `npm install`
+```bash
+$ git clone https://bitbucket.org/MessierM1/newsapp.git <project-name>
+$ cd <project-name>
+```
 
-3. And check to see it works `npm start`
+Then install dependencies and check to see it works:
 
-4. If everything works, you should see application at localhost:8080 in your browser
+```bash
+$ npm install
+$ npm start
+```
+
+If everything works, you can see application at localhost:8080 in your browser
 
 ## Application Structure
 ```
