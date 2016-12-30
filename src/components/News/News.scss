@@ -1,7 +1,6 @@
 @import '../variables.scss';
 
 .news {
-  border: 1px solid $gray;
   display: block;
   float: left;
   width: 200px;
@@ -15,9 +14,18 @@
   }
 
   .news-header {
-    border-bottom: 1px solid $gray;
     font-size: 16px;
+    font-weight: bold;
     padding: 4px;
+  }
+
+  .news-image {
+    overflow: hidden;
+
+    img {
+      width: 200px;
+      height: auto;
+    }
   }
 
   .news-body {
@@ -25,20 +33,9 @@
       padding: 4px;
     }
 
-    .news-image {
-      overflow: hidden;
-
-      img {
-        width: 200px;
-        height: auto;
-      }
-    }
     .like label{
+      margin-top: 5px;
       width: 198px;
-      border-bottom: none;
-      margin-top: -2px;
-      position: absolute;
-      bottom: 0;
     }
   }
 }

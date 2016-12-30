@@ -1,11 +1,11 @@
 import * as types from '../constants/ActionTypes';
 import { newsApiConfig } from '../shared/config';
 
-const startPart = 'https://newsapi.org/v1/articles?source=';
-const endPart = `&apiKey=${newsApiConfig.apiKey}&sortBy=${newsApiConfig.sortBy}`;
+const startUrlPart = 'https://newsapi.org/v1/articles?source=';
+const endUrlPart = `&apiKey=${newsApiConfig.apiKey}&sortBy=${newsApiConfig.sortBy}`;
 
 export const getNews = () => {
-  const promises = newsApiConfig.sources.map(source => fetch(`${startPart}${source}${endPart}`));
+  const promises = newsApiConfig.sources.map(source => fetch(`${startUrlPart}${source}${endUrlPart}`));
 
   const promise = Promise.all(promises)
     .then(responses => Promise.all(responses.map(response => {

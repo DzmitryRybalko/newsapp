@@ -8,22 +8,34 @@
   left: 0;
   padding: 1rem;
 
+
   .mail {
+    float: left;
+    width: 200px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+
     a {
       color: $gray-light;
     }
-
-    float: left;
-    padding-top: 8px;
   }
 
   .search {
-    display: table;
     margin: 0 auto;
+    display: table;
 
     input {
+      width: 200px;
       height: 30px;
       padding: 5px;
     }
+  }
+
+  .reloads {
+    float: right;
+    width: 200px;
+    color: $gray-light;
+    padding-top: 8px;
+    padding-bottom: 10px;
   }
 }

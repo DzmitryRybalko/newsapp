@@ -18,19 +18,18 @@ class News extends React.Component {
     return (
       <div className="news">
         <a href={this.props.url} target="_blank" rel="noopener noreferrer">
+          <div className="news-image">
+            <img src={src} alt="news-description" />
+          </div>
           <div className="news-header">
             {this.props.title}
           </div>
           <div className="news-body">
             <div className="news-description">{this.props.description}</div>
-            <div className="news-image">
-              <img src={src} alt="news-description" />
-            </div>
             <Like />
           </div>
         </a>
       </div>
-
     );
   }
 }

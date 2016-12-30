@@ -2,9 +2,7 @@
   "name": "live-filters",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --colors --host 0.0.0.0",
     "lint": ".\\node_modules\\.bin\\eslint ./src"
   },
@@ -14,7 +12,6 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/MessierM1/live-filters#readme",
   "dependencies": {
     "rc-progress": "^2.0.3",
     "react": "^15.4.1",
