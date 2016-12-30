@@ -10,4 +10,10 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  .not-found {
+    margin: 0 auto;
+    font-size: 35px;
+    font-weight: bold;
+  }
 }

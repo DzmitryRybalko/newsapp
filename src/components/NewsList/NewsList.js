@@ -19,18 +19,20 @@ class NewsList extends React.Component {
   }
 
   render() {
-    const renderedNews = this.props.newsList
+    const filterdNews = this.props.newsList
       .filter(news => news.title.toLowerCase().includes(this.props.filter)
-        || (news.description && news.description.toLowerCase().includes(this.props.filter)))
-      .map(news =>
+        || (news.description && news.description.toLowerCase().includes(this.props.filter)));
+
+    const renderedNews = (filterdNews.length || !this.props.filter) ?
+      filterdNews.map(news =>
         <News
           title={news.title}
           description={news.title}
-          key={news.title}
+          key={news.url}
           url={news.url}
           urlToImage={news.urlToImage}
           />,
-    );
+      ) : (<div className="not-found">News not found</div>);
 
     return (
       <div className="newsList container">

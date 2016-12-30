@@ -2,23 +2,26 @@ import React from 'react';
 
 import './Header.scss';
 
+const RESET_LOAD_TIMEOUT = 1000 * 60 * 60 * 24;
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    let reloadTimes = window.localStorage.getItem('reloadTimes') || 0;
-    ++reloadTimes;
-    window.localStorage.setItem('reloadTimes', reloadTimes);
 
-    this.state = {
-      reloadTimes,
-    };
+    const reloadTimes = this.changeReloadTimes(1);
+    this.state = { reloadTimes };
   }
 
   componentDidMount() {
-    console.log('mount');
-    setTimeout(() => {
+    setTimeout(() => this.changeReloadTimes(-1), RESET_LOAD_TIMEOUT);
+  }
 
-    }, 1000 * 60 * 60 * 24);
+  changeReloadTimes = (value) => {
+    let reloadTimes = +window.localStorage.getItem('reloadTimes') || 0;
+    reloadTimes += value;
+    window.localStorage.setItem('reloadTimes', reloadTimes);
+
+    return reloadTimes;
   }
 
   render() {
