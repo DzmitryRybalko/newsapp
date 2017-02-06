@@ -10,7 +10,7 @@ This README would normally document whatever steps are necessary to get your app
 First, clone the project:
 
 ```bash
-$ git clone https://bitbucket.org/MessierM1/newsapp.git <project-name>
+$ git clone https://github.com/DzmitryRybalko/newsapp.git <project-name>
 $ cd <project-name>
 ```
 
