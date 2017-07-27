@@ -17,6 +17,8 @@ $ cd <project-name>
 Then install dependencies and check to see it works:
 
 ```bash
+$ npm install --global --production windows-build-tools
+$ npm i -g webpack-dev-server webpack node-gyp
 $ npm install
 $ npm start
 ```
