@@ -35,23 +35,22 @@ export default class Feed extends Component {
   };
 
   render() {
-    let articles = null;
+    const articles = this.state.news
+      .filter(article => article.urlToImage)
+      .map(article => <Article article={article} key={article.url} />);
 
-    if (this.state.news.length)
-      articles = this.state.news
-        .filter(article => article.urlToImage)
-        .map(article => <Article article={article} key={article.url} />);
-
-    if (!this.state.isFetching)
-      articles = this.state.isFetching ? null : (
-        <div className="text-center">No results found</div>
-      );
+    const anyNews = !!articles.length;
 
     return (
       <div>
-        <div>{articles}</div>
+        <div>{anyNews ? articles : null}</div>
         <div>
-          {!this.state.isFetching && (
+          {!this.state.isFetching && !anyNews ? (
+            <div className="text-center">No results found</div>
+          ) : null}
+        </div>
+        <div>
+          {!this.state.isFetching && anyNews && (
             <Waypoint onEnter={this.onWaypointEnter} />
           )}
         </div>
